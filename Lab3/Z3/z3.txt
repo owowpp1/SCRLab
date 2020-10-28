@@ -1,0 +1,2 @@
+Skrypt potok.sh oraz polecenia cat mają wspólnego rodzica: /bin/bash
+polecenie sleep jest potomkiem skryptu potok.sh
