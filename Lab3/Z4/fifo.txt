@@ -1,0 +1,17 @@
+Utworzono potok o nazwie FIFO komendą mknod FIFO p
+
+Uruchomiono 4 instancje terminala, po czym w dwóch z nich podano komendę cat FIFO, a w pozostałych
+komendę cat > FIFO. Dzięki temu pierwsze dwa służyły do odczytu danych, a pozostałe- zapisu.
+
+Wpisanie dowolnego tekstu w jednym z dwóch terminali do zapisu powodowało wyrzucenie go na jeden z dwóch
+terminali odczytujących. Dobór terminala (procesu) wyglądał na losowy. Żaden z procesów nie czekał, aż
+drugi coś wyświetli, ani nie przejął całkowicie funkcji wyświetlania. Wpisywany tekst natychmiastowo
+wyrzucany był w jednym z tych dwóch terminali. Podobny efekt przynosiło dodanie tekstu poprzez piąty
+terminal komendą echo "tekst" >> FIFO.
+
+Zamknięcie jednego z procesów zapisujących nie wpływa na procesy odczytujące, jednak zamknięcie obu
+procesów zapisujących automatycznie zamyka wszystkie procesy odczytujące.
+
+Zamknięcie jednego z procesów odczytujących nie wpływa na działanie procesów zapisujących. Zamknięcie
+obu z nich również nie zamyka procesów zapisujących, jednakże dowolna próba dodania tekstu automatycznie
+je zabija.
