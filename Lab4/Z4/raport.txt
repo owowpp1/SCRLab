@@ -1,0 +1,15 @@
+Uruchomiono skrypt napisany na poprzednim laboratorium data.sh przechwytujący sygnały.
+Następnie udano się do folderu /proc/[pid]/ i odczytano zawartość pseudopliku status.
+By sprawdzić, które sygnały są przechwytywane przez proces należy spojrzeć na wartość
+przy SigCgt. Jest to maska w systemie szesnastkowym, która, przeniesiona na system
+bitowy, pokazuje, który sygnał jest obsługiwany (1), a który nie (0).
+
+
+Uruchomiono potok trzech poleceń, z których jednym było wywołanie skryptu potok.sh
+utworzonego na potrzeby poprzedniego laboratorium.
+Zastosowana komenda:
+    sh potok.sh | cat | cat > /dev/null
+następnie sprawdzono pid wszystkich z tych procesów komendą ps oraz wyszukano pliki
+otwarte przez te procesy komendą lsof z flagą -p.
+Dzięki temu można było odczytać, który proces cat został uruchomiony wcześniej,
+gdyż jego wyjście będzie jednocześnie wejściem następnego.
