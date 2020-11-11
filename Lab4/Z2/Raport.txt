@@ -1,0 +1,5 @@
+Utworzono funkcję Analiza, która odpowiadać ma za odpowiednie zareagowanie na otrzymany sygnał.
+SIGALRM wyświetla komunikat, po czym zamyka program.
+SIGTERM wyświetla komunikat, po czym kontynuuje działanie programu.
+SIGUSR1 wyświetla komunikat, po czym przestaje reagować na 1000000000 iteracji.
+SIGUSR2 jest całkowicie ignorowany.
