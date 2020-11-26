@@ -59,7 +59,7 @@ int main(int argc, char *argv[]){
         close(0);           //zwolnienie wejścia
         dup(pipe1[0]);      //wejście przejęte przez potok
 
-        execlp("display", "display", "-", NULL); //wywołanie programu display bez argumentów.
+        execlp("display", "display", NULL);      //wywołanie programu display bez argumentów.
                                                  //obraz zostanie pobrany ze standardowego
                                                  //wejścia, czyli tutaj pipe.
 
